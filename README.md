@@ -1,15 +1,58 @@
-# Developer Test
+Todo App Frontend
 
-### To run the FE project locally python -m http.server 8000 or use any other http-server
+This is the frontend for the Todo App assessment. It is a static JavaScript app that works with the Todo API backend.
 
-# Instructions
+How to Run
 
-1. Create a repository for this project on Github or any git repository of your choice.
-2. Build the backend for the todo application that will expose endpoints to READ, UPDATE, POST, DELETE.
-3. The backend should be built in the latest version of .NET Core and utilize entity framework.
-4. Store the todos in a SQL database of your choice.
-5. In the frontend project there are comments to implement some of these endpoints.
-6. Add the necassary documentation where applicable.
-7. Add default todos also in the database that show once you run the project.
+Clone the repo:
+git clone https://github.com/TreasureShabane/TodoApp.git
 
-Once you are done send us a link to the repository.
+Navigate into the folder:
+cd todo-frontend
+
+Start a local server (Python example):
+python -m http.server 8000
+
+Open your browser at:
+http://localhost:8000
+
+Folder Structure
+
+app/
+
+controllers/todo.controller.js     → Handles UI events
+
+models/todo.model.js               → Defines the Todo model
+
+services/todo.service.js           → Communicates with the backend API
+
+app.module.js                      → Initializes the app
+
+index.html                           → Main HTML file
+
+styles.css                           → Styles
+
+API Integration
+
+Make sure the backend is running at:
+https://localhost:7133/api/todo
+
+The frontend uses fetch calls in todo.service.js to access:
+
+GET /GetTodoItems
+
+GET /GetTodoItemById/{id}
+
+POST /CreateTodoItem
+
+PUT /UpdateTodoItem
+
+DELETE /DeleteTodoItem/{id}
+
+Notes
+
+Works with the provided backend repo.
+
+Make sure to allow CORS or run both frontend and backend on localhost.
+
+Comments in the JS files guide where to link buttons to backend calls.
